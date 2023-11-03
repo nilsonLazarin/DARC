@@ -1,0 +1,14 @@
+/* JasonEmbedded Project */
+
+MAS civilDefense {
+
+    infrastructure: Centralised
+
+    agents:
+        commander;
+        telephonist agentArchClass Communicator;
+
+    aslSourcePath:
+		"agents";
+
+}

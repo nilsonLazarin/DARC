@@ -1,0 +1,14 @@
+/* JasonEmbedded Project */
+
+MAS cityHall {
+
+    infrastructure: Centralised
+
+    agents:
+        mayor;
+        telephonist agentArchClass Communicator;
+
+    aslSourcePath:
+		"agents";
+
+}

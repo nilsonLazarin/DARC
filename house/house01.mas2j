@@ -1,0 +1,16 @@
+/* Jason Project */
+
+MAS house {
+
+    infrastructure: Centralised
+
+    agents:
+        forecaster;
+        leader;
+        actuator agentArchClass Argo;
+        telephonist agentArchClass Communicator;
+
+    aslSourcePath:
+    "agents";
+
+}

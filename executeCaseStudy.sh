@@ -1,0 +1,11 @@
+cd civilDefense 
+./run.sh &
+cd ..
+cd cityHall 
+sleep 3
+./run.sh &
+cd ..
+cd house
+sleep 5
+./run.sh &
+cd ..
