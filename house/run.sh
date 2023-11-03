@@ -1,1 +1,1 @@
-java -jar ../jasonEmbeddedWithForecastAPI.jar house01.mas2j 
+java -jar ../jasonEmbeddedWithForecastAPI.jar house01.mas2j -console
