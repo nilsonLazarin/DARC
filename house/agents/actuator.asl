@@ -1,4 +1,4 @@
-serialPort(ttyACM0).
+serialPort(ttyUSB0).
 
 /* Initial goals */
 !start.
@@ -22,4 +22,8 @@ waitingInstructions(Alert,TaskForce,OurUUID)<-
 	!infoTaskForce.
 
 +!infoLCD(Message) <- .act(Message).
+
++!yellowAlert <- .act(yellowAlert).
++!greenAlert <- .act(greenAlert).
++!redAlert <- .act(redAlert).
       

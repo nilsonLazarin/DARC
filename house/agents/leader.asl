@@ -6,6 +6,7 @@
     ?myCityIBGE(IBGE);
     ?myIotAddress(OurUUID);
     .broadcast(tell,waitingInstructions(AlertID,TaskForceUUID,OurUUID));
+    .send(actuator,achieve,greenAlert);
     .send(telephonist,achieve,sendExternalMessage(TaskForceUUID,coordinator,tell,smartHome(OurUUID)));
 .
 
@@ -39,8 +40,10 @@
 
 +!alert(Alert,evacuate): taskForce(AlertID,TaskForceUUID) & Alert=AlertID <-
     .print("EVACUATE!!!!!!!!!!!!!!!!!!!");
+    .send(actuator,achieve,redAlert);
     .send(actuator,achieve,infoLCD("Evacuate!!!!")).
 
 +!alert(Alert,atention): taskForce(AlertID,TaskForceUUID) & Alert=AlertID <-
     .print("ALERT!!!!!!!!!!!!!!!!!!!!!!!!");
+    .send(actuator,achieve,yellowAlert);
     .send(actuator,achieve,infoLCD("Atention!!!")).
