@@ -41,9 +41,11 @@
 +!alert(Alert,evacuate): taskForce(AlertID,TaskForceUUID) & Alert=AlertID <-
     .print("EVACUATE!!!!!!!!!!!!!!!!!!!");
     .send(actuator,achieve,redAlert);
+    .random(R); .wait(3000*R);
     .send(actuator,achieve,infoLCD("Evacuate!!!!")).
 
 +!alert(Alert,atention): taskForce(AlertID,TaskForceUUID) & Alert=AlertID <-
     .print("ALERT!!!!!!!!!!!!!!!!!!!!!!!!");
     .send(actuator,achieve,yellowAlert);
+    .random(R); .wait(3000*R);
     .send(actuator,achieve,infoLCD("Atention!!!")).
