@@ -1,6 +1,4 @@
 serialPort(ttyUSB0).
-serialPort(ttyACM0).
-serialPort(ttyEmulatedPort0).
 
 /* Initial goals */
 !start.
@@ -11,7 +9,10 @@ serialPort(ttyEmulatedPort0).
 	.limit(600);
 	.percepts(open).
 
++device(D) <- .print("New perception-> device: ",D). 
 +rainLast24hrs(RainStatus) <- .print("New perception-> rainLevel: ",RainStatus," mm"). 
++humidity(H) <- .print("New perception-> humidity: ",H," %"). 
++temperature(T) <- .print("New perception-> temperature: ",T," ºC").
 
 +!infoTaskForce: 
 rainLast24hrs(RainStatus) & 
@@ -26,13 +27,3 @@ waitingInstructions(Alert,TaskForce,OurUUID)<-
 +!yellowAlert <- .act(yellowAlert).
 +!greenAlert <- .act(greenAlert).
 +!redAlert <- .act(redAlert).
-      
-+port(Port,Status): Status = off | Status = timeout <-
-	.percepts(close);
-	-serialPort(Port);
-	.print("Serial port ", Port, " error! - Trying another");
-	!start.
-
-+port(Port,Status): Status = on <- .print("Successfully connected at ",Port).
-
--start <- .print("Verify the Serial port connection! Stopping the execution."); .stopMAS.

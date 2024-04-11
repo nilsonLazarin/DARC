@@ -26,16 +26,23 @@ echo "Starting the CityHall MAS"
 cd ..
 cd cityHall 
 ./run.sh &
-read
 echo "   Press ENTER to continue the Case Study Executing...."
+read
 cd ..
 echo "Starting the SmartHome Simulation"
-$SIMULIDE house/simulation/LCDFirmwareInSimulator/LCDFirmwareInSimulator.sim1 &
-sleep 5
+sudo ln -s /dev/ttyEmulatedPort0 /dev/ttyUSB0
+$SIMULIDE house/simulation/LCDFirmwareInSimulator/LCDFirmwareInSimulator.sim1 >> /dev/null  2>> /dev/null &
+PIDSIMULIDE=$!
 echo "   Please START the simulation and CONNECT the serial port...."
 echo "   Press ENTER to continue the Case Study Executing...."
 read
 cd house
-sleep 5
 ./run.sh &
 cd ..
+echo "Scenario is executing! Press ENTER to stop."
+read
+echo "Scenario is executing! Press ENTER (AGAIN) to stop."
+read
+pkill java 2>> /dev/null
+kill -9 $PIDSIMULIDE 2>> /dev/null
+sudo rm /dev/ttyUSB0 2>> /dev/null

@@ -20,7 +20,7 @@ inmetAlertAS("https://apiprevmet3.inmet.gov.br/avisos/rss").
 : Time=rightNow
 //& Serverity=severe
 <-
-    .print("New Alert: ",AlertID,
+/*        .print("New Alert: ",AlertID,
     "\n Description: ",Description,
     "\n Event : ",Event, 
     "\n Serverity: ",Serverity,
@@ -30,6 +30,8 @@ inmetAlertAS("https://apiprevmet3.inmet.gov.br/avisos/rss").
     "\n What to do: ",Instruction,
     "\n More info: ",Link,
     "\n");
+*/
+    .print("New Alert: ",AlertID," Serverity: ",Serverity);
 
     .send(leader,tell,weatherEvent(AlertID,Event,Serverity)); 
 .
