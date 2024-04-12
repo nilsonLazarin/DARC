@@ -9,6 +9,7 @@ then
     echo "Preparing System"
     echo "deb [trusted=yes] http://packages.chon.group/ chonos main" | sudo tee /etc/apt/sources.list.d/chonos.list
     sudo apt update
+    sudo apt install linux-headers-`uname -r`
     sudo apt install chonos-serial-port-emulator chonos-embeddedmas chonos-simulide
     echo "Installation complete. Rebooting system..."
     sleep 10
