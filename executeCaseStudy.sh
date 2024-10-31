@@ -1,7 +1,7 @@
 #! /bin/bash
-SIMULIDE="/opt/chonos-embMAS/lib/simulide/simulide"
+SIMULIDE="/opt/group.chon/simulide/simulide"
 SERIALEMULATOR="/opt/chonos-embMAS/lib/SerialPortEmulator/virtualbot"
-JASONEMBEDDED="/opt/chonos-embMAS/lib/jason/jasonEmbedded.jar"
+JASONEMBEDDED="/opt/group.chon/jasonEmbedded/jasonEmbedded.jar"
 clear
 
 if [ ! -f "$SIMULIDE"  ] ||  [ ! -f "$SERIALEMULATOR" ] ||  [ ! -f "$JASONEMBEDDED" ]
